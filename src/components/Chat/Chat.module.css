@@ -1,0 +1,27 @@
+.Chat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+  padding: 8px;
+  overflow-y: auto;
+}
+
+.Message {
+  width: 90%;
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+/* User message (right side) */
+.Message[data-role="user"] {
+  align-self: flex-end;
+  background: #f3f3f3;
+}
+
+/* Assistant message (left side) */
+.Message[data-role="assistant"] {
+  align-self: flex-start;
+  background: #e5e5e5;
+}
