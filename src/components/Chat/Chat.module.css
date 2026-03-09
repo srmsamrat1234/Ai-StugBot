@@ -1,27 +1,40 @@
 .Chat {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
   height: 100%;
-  padding: 8px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
   overflow-y: auto;
 }
 
 .Message {
-  width: 90%;
-  padding: 8px 16px;
+  max-width: 70%;
+  padding: 10px 16px;
   border-radius: 16px;
   font-size: 14px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 /* User message (right side) */
 .Message[data-role="user"] {
   align-self: flex-end;
-  background: #f3f3f3;
+  background: #1f6bd5;
+  color: white;
 }
 
 /* Assistant message (left side) */
 .Message[data-role="assistant"] {
   align-self: flex-start;
   background: #e5e5e5;
+}
+@media (max-width: 768px) {
+  .Message {
+    max-width: 90%;
+    font-size: 13px;
+  }
 }

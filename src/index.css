@@ -1,3 +1,8 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,14 +18,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
 body {
-  width:100;
-  max-width: 640px;
+  width: 100%;          /* fixed */
   min-height: 100vh;
-  margin: 0 auto;
+  margin: 0;
 }
-
