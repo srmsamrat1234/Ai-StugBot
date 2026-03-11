@@ -1,23 +1,24 @@
 .Chat {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   height: 100%;
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 18px;
   overflow-y: auto;
 }
 
+/* Message bubble */
 .Message {
-  max-width: 70%;
-  padding: 10px 16px;
-  border-radius: 16px;
-  font-size: 14px;
-  line-height: 1.5;
+  max-width: min(75%, 700px);
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-size: 15px;
+  line-height: 1.6;
   word-wrap: break-word;
-  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 /* User message (right side) */
@@ -30,11 +31,65 @@
 /* Assistant message (left side) */
 .Message[data-role="assistant"] {
   align-self: flex-start;
-  background: #e5e5e5;
+  background: #f5f7fb;
+  color: #111827;
 }
+
+/* Markdown headings */
+.Message h1,
+.Message h2,
+.Message h3 {
+  margin: 8px 0 6px;
+  font-weight: 600;
+}
+
+/* Markdown paragraph spacing */
+.Message p {
+  margin: 6px 0;
+}
+
+/* Lists */
+.Message ul,
+.Message ol {
+  margin: 6px 0;
+  padding-left: 18px;
+}
+
+/* Code block */
+.Message pre {
+  background: #fefefe;
+  color: #e5e7eb;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* Inline code */
+.Message code {
+  background: #e5e7eb;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   .Message {
     max-width: 90%;
-    font-size: 13px;
+    font-size: 14px;
   }
+}
+.Chat {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 18px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
 }
